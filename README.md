@@ -23,15 +23,15 @@ plink --vcf vcf_FilePrefix --make-bed --out New_FilePrefix
 ```
 3. If your data is in another genomic build you can use the [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver) tool to convert to the GRCh38 (or hg38) build. For instructinos on formatting a BED file see here https://genome.ucsc.edu/FAQ/FAQformat.html#format1. For the command line version of the LiftOver tool see instructions here https://genome.ucsc.edu/FAQ/FAQdownloads.html#liftOver. We also provide a basic example using the command line version on a linux machine in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#additional-liftover-instructions) section below. Running the analyses with genetic data in the wrong build will produce an error. If your data is in GRCh37 (hg19) or GRCh36 (hg18) the error will inform you and you can use this information for LiftOver.
 
-**IMPORTANT NOTE**, once genomic coordinates have been lifted you will need to generate new plink files updating the chromosomes and positions of your plink v1 files. An example script is provided in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#additional-liftover-instructions) section below.
+**IMPORTANT NOTE**, once genomic coordinates have been lifted you will need to generate new plink files updating the chromosomes and positions of your plink v1 files. An example script is provided in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#additional-liftover-instructions) section below.
 
 If you require help with converting your data please post an issue on the GitHub page using the issues tab above.
 
 ## 3.	Perform the Analyses
 Within the downloaded “ENIGMA_SCZ_PRS” directory, you will find 3 potential scripts to run the analyses:
   - ``Singularity_RUN_ENIGMA_SCZ_PRS.sh`` – to run the singularity container. Instructions directly below in the “Using the Singularity Container” section.
-  -	``Docker_RUN_ENIGMA_SCZ_PRS.sh`` – to run the docker container. Skip to instructions in [Using the Docker Container](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#using-the-docker-container)
-  -	``RUN_ENIGMA_SCZ_PRS_noContainer.sh`` – to run the analyses without any containers (requires installing software). Skip to instructions in [Not Using a Container](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#not-using-a-container)
+  -	``Docker_RUN_ENIGMA_SCZ_PRS.sh`` – to run the docker container. Skip to instructions in [Using the Docker Container](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#using-the-docker-container)
+  -	``RUN_ENIGMA_SCZ_PRS_noContainer.sh`` – to run the analyses without any containers (requires installing software). Skip to instructions in [Not Using a Container](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#not-using-a-container)
 
 As mentioned above, we recommend using the singularity or docker containers on a linux based server with at least 32GB of RAM and 25GB of free storage space. Below are some steps to perform the analyses with Singularity, Docker, or no container. 
 
@@ -58,7 +58,7 @@ or
 ``
 bash Singularity_RUN_ENIGMA_SCZ_PRS.sh 
 ``
-4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#4-sharing-outputs) section
+4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#4-sharing-outputs) section
 
 
 ### Using the Docker Container:
@@ -91,7 +91,7 @@ or
 ``
 bash Docker_RUN_ENIGMA_SCZ_PRS.sh 
 ``
-6. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#4-sharing-outputs) section
+6. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#4-sharing-outputs) section
 
 
 
@@ -130,7 +130,7 @@ or
 ``
 bash RUN_ENIGMA_SCZ_PRS_noContainer.sh 
 ``
-4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#4-sharing-outputs) section
+4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#4-sharing-outputs) section
 
 ## 4. Sharing Outputs
 All outputs will be written to a directory named output_”SampleName”. The list of output files include:
@@ -144,14 +144,14 @@ All outputs will be written to a directory named output_”SampleName”. The li
   -	``“Sample_Name”_rel.kin0`` – a file containing individuals with second degree genetically defined relatedness.
   -	``“Sample_Name”_rel.log`` – a log file for the genetic relatedness estimation
 
-We ask that you share all files in this directory along with the **[ENIGMA SCZ covariates](https://github.com/nadineparker/ENIGMA_SCZ_PRS/edit/main/README.md#enigma-SCZ-covariates)** and the standard **ENIGMA FreeSurfer cortical (SurfAvg/ThickAvg.csv) and subcortical (LandRvolumes.csv) measures**. If you already have imaging and covariate data stored on the UCI server there is no need to re-share this data. 
+We ask that you share all files in this directory along with the **[Additional Variables](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#additional-variables)** and the standard **ENIGMA FreeSurfer cortical (SurfAvg/ThickAvg.csv) and subcortical (LandRvolumes.csv) measures**. If you already have imaging and covariate data stored on the UCI server there is no need to re-share this data. 
 
 Please ensure the participant identifiers used for the genetic data match the covariates and imaging data. If not, please provide a list which matches the different identifiers.
 
 Email Nadine Parker when you are ready to share your data.
 
 ## Additional Information
-### ENIGMA SCZ Covariates
+### Additional Variables
  - ``SubjID`` - Subject ID should match the format of the IDs in the LandRvolumes.csv file and the SurfAvg/ThickAvg.csv files from the subcortical and cortical projects as well as the genetic data in the outputs from this analysis.
  - ``Dx`` - Diagnosis coded as bipolar patient = SCZ and control = CN
  - ``FullDx`` - Full diagnosis coded as: SCZ1, SCZ2, SCZNOS, SchizoAffective. Set all controls = NA
@@ -194,7 +194,7 @@ bim$V1 <- paste0("chr", bim$V1)
 write.table(bim, file="YOUR_NAME_FOR_LIFTOVER.bed", row.names = F, col.names = F, sep = "\t", quote = F)
 ```
 
- 2. Run LiftOver using the command line tool located [here](https://github.com/nadineparker/ENIGMA_SCZ_PRS/blob/main/liftOver) (navigate to the "..." button near the top right and click download) and a GRCh37 (hg19) to GRCh38 (hg38) chainfile downloaded from [here](https://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/). You will need to supply the following to run liftOver:
+ 2. Run LiftOver using the command line tool located [here]() (navigate to the "..." button near the top right and click download) and a GRCh37 (hg19) to GRCh38 (hg38) chainfile downloaded from [here](https://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/). You will need to supply the following to run liftOver:
     - ``liftOver`` the executable file to run the analyses
     - ``YOUR_NAME_FOR_LIFTOVER.bed`` - the BED file that contains coordinates to lift to a new build (generated in the step above).
     - ``hg19toHG38.over.chan.gz`` - a chainfile for lifting from your current genetic build to build GRCh38 (hg19). This example uses a GRCh37 (hg19) to GRCh38 (hg38) chainfile
@@ -233,4 +233,3 @@ plink --bfile YOUR_OLD_PLINK_Prefix --update-chr YOUR_LIFTED_CLEAN.bed 1 4 --mak
  # Note, column 3 below contains the new coordinates in build GRCh38 (hg38)
 plink --bfile YOUR_NEW_PLINK_Prefix --update-map YOUR_LIFTED_CLEAN.bed 3 4 --make-bed --out YOUR_NEWER_PLINK_Prefix
 ```
-![image](https://github.com/nadineparker/ENIGMA_SCZ_MRS/assets/79993025/f2b1d20d-07cc-47e9-80e5-111ddc4d300e)
