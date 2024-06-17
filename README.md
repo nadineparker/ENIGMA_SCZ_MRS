@@ -21,17 +21,17 @@ or
 ```
 plink --vcf vcf_FilePrefix --make-bed --out New_FilePrefix
 ```
-3. If your data is in another genomic build you can use the [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver) tool to convert to the GRCh38 (or hg38) build. For instructinos on formatting a BED file see here https://genome.ucsc.edu/FAQ/FAQformat.html#format1. For the command line version of the LiftOver tool see instructions here https://genome.ucsc.edu/FAQ/FAQdownloads.html#liftOver. We also provide a basic example using the command line version on a linux machine in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#additional-liftover-instructions) section below. Running the analyses with genetic data in the wrong build will produce an error. If your data is in GRCh37 (hg19) or GRCh36 (hg18) the error will inform you and you can use this information for LiftOver.
+3. If your data is in another genomic build you can use the [LiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver) tool to convert to the GRCh38 (or hg38) build. For instructinos on formatting a BED file see here https://genome.ucsc.edu/FAQ/FAQformat.html#format1. For the command line version of the LiftOver tool see instructions here https://genome.ucsc.edu/FAQ/FAQdownloads.html#liftOver. We also provide a basic example using the command line version on a linux machine in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_MRS#additional-liftover-instructions) section below. Running the analyses with genetic data in the wrong build will produce an error. If your data is in GRCh37 (hg19) or GRCh36 (hg18) the error will inform you and you can use this information for LiftOver.
 
-**IMPORTANT NOTE**, once genomic coordinates have been lifted you will need to generate new plink files updating the chromosomes and positions of your plink v1 files. An example script is provided in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#additional-liftover-instructions) section below.
+**IMPORTANT NOTE**, once genomic coordinates have been lifted you will need to generate new plink files updating the chromosomes and positions of your plink v1 files. An example script is provided in the [Additional LiftOver Instructions](https://github.com/nadineparker/ENIGMA_SCZ_MRS#additional-liftover-instructions) section below.
 
 If you require help with converting your data please post an issue on the GitHub page using the issues tab above.
 
 ## 3.	Perform the Analyses
 Within the downloaded “ENIGMA_SCZ_PRS” directory, you will find 3 potential scripts to run the analyses:
   - ``Singularity_RUN_ENIGMA_SCZ_PRS.sh`` – to run the singularity container. Instructions directly below in the “Using the Singularity Container” section.
-  -	``Docker_RUN_ENIGMA_SCZ_PRS.sh`` – to run the docker container. Skip to instructions in [Using the Docker Container](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#using-the-docker-container)
-  -	``RUN_ENIGMA_SCZ_PRS_noContainer.sh`` – to run the analyses without any containers (requires installing software). Skip to instructions in [Not Using a Container](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#not-using-a-container)
+  -	``Docker_RUN_ENIGMA_SCZ_PRS.sh`` – to run the docker container. Skip to instructions in [Using the Docker Container](https://github.com/nadineparker/ENIGMA_SCZ_MRS#using-the-docker-container)
+  -	``RUN_ENIGMA_SCZ_PRS_noContainer.sh`` – to run the analyses without any containers (requires installing software). Skip to instructions in [Not Using a Container](https://github.com/nadineparker/ENIGMA_SCZ_MRS#not-using-a-container)
 
 As mentioned above, we recommend using the singularity or docker containers on a linux based server with at least 32GB of RAM and 25GB of free storage space. Below are some steps to perform the analyses with Singularity, Docker, or no container. 
 
@@ -58,7 +58,7 @@ or
 ``
 bash Singularity_RUN_ENIGMA_SCZ_PRS.sh 
 ``
-4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#4-sharing-outputs) section
+4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS#4-sharing-outputs) section
 
 
 ### Using the Docker Container:
@@ -91,7 +91,7 @@ or
 ``
 bash Docker_RUN_ENIGMA_SCZ_PRS.sh 
 ``
-6. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#4-sharing-outputs) section
+6. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS#4-sharing-outputs) section
 
 
 
@@ -130,7 +130,7 @@ or
 ``
 bash RUN_ENIGMA_SCZ_PRS_noContainer.sh 
 ``
-4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#4-sharing-outputs) section
+4. Once the analysis is complete see the [Sharing Outputs](https://github.com/nadineparker/ENIGMA_SCZ_MRS#4-sharing-outputs) section
 
 ## 4. Sharing Outputs
 All outputs will be written to a directory named output_”SampleName”. The list of output files include:
@@ -144,7 +144,7 @@ All outputs will be written to a directory named output_”SampleName”. The li
   -	``“Sample_Name”_rel.kin0`` – a file containing individuals with second degree genetically defined relatedness.
   -	``“Sample_Name”_rel.log`` – a log file for the genetic relatedness estimation
 
-We ask that you share all files in this directory along with the **[Additional Variables](https://github.com/nadineparker/ENIGMA_SCZ_MRS/edit/main/README.md#additional-variables)** and the standard **ENIGMA FreeSurfer cortical (SurfAvg/ThickAvg.csv) and subcortical (LandRvolumes.csv) measures**. If you already have imaging and covariate data stored on the UCI server there is no need to re-share this data. 
+We ask that you share all files in this directory along with the **[Additional Variables](https://github.com/nadineparker/ENIGMA_SCZ_MRS#additional-variables)** and the standard **ENIGMA FreeSurfer cortical (SurfAvg/ThickAvg.csv) and subcortical (LandRvolumes.csv) measures**. If you already have imaging and covariate data stored on the UCI server there is no need to re-share this data. 
 
 Please ensure the participant identifiers used for the genetic data match the covariates and imaging data. If not, please provide a list which matches the different identifiers.
 
