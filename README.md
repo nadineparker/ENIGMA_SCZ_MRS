@@ -152,21 +152,24 @@ Email Nadine Parker when you are ready to share your data.
 
 ## Additional Information
 ### Additional Variables
+Please use NA for each participant if one of the variables below is not included in your sample.
  - ``SubjID`` - Subject ID should match the format of the IDs in the LandRvolumes.csv file and the SurfAvg/ThickAvg.csv files from the subcortical and cortical projects as well as the genetic data in the outputs from this analysis.
- - ``Dx`` - Diagnosis coded as bipolar patient = SCZ and control = CN
- - ``FullDx`` - Full diagnosis coded as: SCZ1, SCZ2, SCZNOS, SchizoAffective. Set all controls = NA
+ - ``Dx`` - Diagnosis coded as patient = SCZ and control = CN
  - ``Age`` - Years at time of scan
  - ``Sex`` - Males = M, Females = F
 - ``AgeofOnset`` - Age of Onset (in years) of the first DSM-defined mood episode. Set all controls = NA
-- ``DiseaseDuration`` - Length of time since diagnosis (if available).
-- ``StageofIllness`` - Current status of illness (if available).  
+- ``DiseaseDuration`` - Years since diagnosis (if available).
+- ``MedicationUse`` - Yes or No (if available).
+- ``TypicalAntipsychotic`` - 0=controls, 1=patients without typical antipsychotics, 2= patients with typical antipsychotics
+- ``AtypicalAntipsychotic`` - 0=controls, 1=patients without atypical antipsychotics, 2= patients with typical antipsychotics
+- ``Clozapine`` - 0=controls, 1=patients without clozapine, 2= patients with clozapine
+- ``DurationOfMedication`` – years of medication use (e.g., 6 months = 0.5).
 - ``DepressiveSymptoms`` - Yes or No (if available).  
-- ``IQ`` - score/general factor (if available).  
 - ``AlcoholAbuse`` - Yes or No (if available).  
 - ``SubstanceAbuse`` - Yes or No (if available).  
 - ``Smoking`` - 0=absent, 1=lifetime, 2=current (if available).  
-- ``Site`` - If cohort data was collected across multiple sites, indicate site for each subject. If all data is from same site, mark entire column = NA
-- ``Scanner`` - If cohort data was collected across multiple scanners, indicate the scanner for each subject. If all data is from the same scanner, mark entire column = NA
+- ``Site`` - Indicate site for each subject.
+- ``Scanner`` - Indicate the scanner for each subject.
 
 
 ### Additional LiftOver Instructions
