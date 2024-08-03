@@ -170,6 +170,7 @@ Please use NA for each participant if one of the variables below is not included
 - ``Smoking`` - 0=absent, 1=lifetime, 2=current (if available).  
 - ``Site`` - Indicate site for each subject.
 - ``Scanner`` - Indicate the scanner for each subject.
+- ``Ethnicity`` - Self-reported ancestry or ethnicity.
 
 
 ### Additional LiftOver Instructions
