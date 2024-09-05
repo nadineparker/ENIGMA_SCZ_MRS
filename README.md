@@ -157,13 +157,13 @@ Please use NA for each participant if one of the variables below is not included
  - ``Dx`` - Diagnosis coded as patient = SCZ and control = CN
  - ``Age`` - Years at time of scan
  - ``Sex`` - Males = M, Females = F
-- ``AgeofOnset`` - Age of Onset (in years) of the first DSM-defined mood episode. Set all controls = NA
+- ``AgeofOnset`` - Age of Onset (in years) of the first DSM-defined episode. Set all controls = NA
 - ``DiseaseDuration`` - Years since diagnosis (if available).
 - ``MedicationUse`` - Yes or No (if available).
 - ``TypicalAntipsychotic`` - 0=controls, 1=patients without typical antipsychotics, 2= patients with typical antipsychotics
 - ``AtypicalAntipsychotic`` - 0=controls, 1=patients without atypical antipsychotics, 2= patients with typical antipsychotics
 - ``Clozapine`` - 0=controls, 1=patients without clozapine, 2= patients with clozapine
-- ``DurationOfMedication`` – years of medication use (e.g., 6 months = 0.5).
+- ``DurationOfMedication`` – years of current medication use (e.g., 6 months = 0.5).
 - ``DepressiveSymptoms`` - Yes or No (if available).  
 - ``AlcoholAbuse`` - Yes or No (if available).  
 - ``SubstanceAbuse`` - Yes or No (if available).  
