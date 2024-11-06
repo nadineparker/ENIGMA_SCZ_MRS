@@ -70,7 +70,7 @@ mkdir -p ${OUT_DIR}
 
 ${PLINK} --bfile ${Sample_Dir}/${Prefix} \
 	--threads ${NCORES} --memory ${MEMORY} \
-	--extract ${OUTDIR}/NonDup_SNPlist.txt \
+	--allow-extra-chr --extract ${OUTDIR}/NonDup_SNPlist.txt \
 	--make-bed --out ${OUT_DIR}/${Sample_Name}_rmDupSNP
 
 
