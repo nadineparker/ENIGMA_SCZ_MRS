@@ -137,7 +137,6 @@ All outputs will be written to a directory named output_”SampleName”. The li
   -	``pca_”Sample_Name”_proj.ancestries.png`` – a figure plotting principle components for projected ancestries using the 1000 Genomes super populations
   -	``pca_”Sample_Name”_proj.ancestries.txt`` – a text file containing genetic principle components and assignments of participants to 1000 Genomes super populations
   -	``RUN_ENIGMA_SCZ_PRS_”Sample_Name”.log`` – a log file for the entire analyses
-  -	``“Sample_Name”_PGC_SCZ_2022…txt.all_score`` – a total of 8 files containing cell-type based polygenic scores
   -	``“Sample_Name”_PRS.txt`` – a file containing SCZ polygenic scores
   -	``“Sample_Name”_rel.kin0`` – a file containing individuals with second degree genetically defined relatedness.
   -	``“Sample_Name”_rel.log`` – a log file for the genetic relatedness estimation
